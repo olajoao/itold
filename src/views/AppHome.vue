@@ -1,6 +1,5 @@
 <template>
-  <section class="">
-    <AppHeader />
+  <section>
     <div class="container mx-auto">
       <div class="h-full px-5 md:py-14">
         <h1
@@ -30,6 +29,5 @@
 </template>
 
 <script setup lang="ts">
-import AppHeader from "../components/AppHeader.vue";
 import HeroCard from "../components/home/HeroCard.vue";
 </script>
