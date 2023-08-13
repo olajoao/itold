@@ -1,7 +1,7 @@
 <template>
   <main :class="{ dark: darkMode }">
     <AppHeader />
-    <div class="dark:bg-neutral-800">
+    <div class="bg-white dark:bg-neutral-800">
       <RouterView />
     </div>
   </main>

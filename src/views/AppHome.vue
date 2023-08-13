@@ -7,7 +7,7 @@
         >
           Populares agora
         </h1>
-        <p class="mt-8 dark:text-neutral-300">
+        <p class="mt-8 text-gray-700 dark:text-neutral-300">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias
           accusamus magnam velit porro nulla facere voluptates optio nam sint
           iure maiores totam minima maxime cupiditate ea error fugiat, beatae
