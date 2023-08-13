@@ -1,27 +1,28 @@
 <template>
   <section class="">
     <AppHeader />
-    <div class="container mx-auto bg-red-100 h-[60vh]">
-      <div class="border border-green-400 h-full px-5 md:py-14">
-        <h1 class="text-gray-800 font-bold text-lg md:text-6xl">
+    <div class="container mx-auto">
+      <div class="h-full px-5 md:py-14">
+        <h1
+          class="text-gray-800 dark:text-neutral-200 font-bold text-lg md:text-6xl"
+        >
           Populares agora
         </h1>
-        <div class="flex items-center gap-5 mt-10">
-          <router-link
-            class="border rounded overflow-hidden shadow shadow-gray-200"
-            to="/"
-          >
-            <img
-              class="max-w-full h-auto"
-              src="https://picsum.photos/200/250"
-              alt=""
-            />
-            <div class="py-3">
-              <h2 class="font-semibold truncate text-sm">
-                Homem-Aranha no Aranhaverso parte 2
-              </h2>
-            </div>
-          </router-link>
+        <p class="mt-8 dark:text-neutral-300">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias
+          accusamus magnam velit porro nulla facere voluptates optio nam sint
+          iure maiores totam minima maxime cupiditate ea error fugiat, beatae
+          ducimus?
+        </p>
+        <div class="grid grid-cols-4 gap-5 mt-10">
+          <HeroCard />
+          <HeroCard />
+          <HeroCard />
+          <HeroCard />
+          <HeroCard />
+          <HeroCard />
+          <HeroCard />
+          <HeroCard />
         </div>
       </div>
     </div>
@@ -30,4 +31,5 @@
 
 <script setup lang="ts">
 import AppHeader from "../components/AppHeader.vue";
+import HeroCard from "../components/home/HeroCard.vue";
 </script>
