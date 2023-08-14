@@ -1,6 +1,8 @@
 <template>
   <section class="py-14">
-    <h1 class="text-3xl font-semibold text-gray-800">Discussão (20)</h1>
+    <h1 class="text-3xl font-semibold text-gray-800 dark:text-neutral-300">
+      Discussão (20)
+    </h1>
     <form class="mb-10" action="">
       <div class="my-5">
         <label

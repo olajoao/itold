@@ -4,7 +4,7 @@
   >
     <router-link class="flex items-center" to="/">
       <div class="w-8">
-        <Logo class="w-8 h-8 text-neutral-800 transform logo" />
+        <Logo class="w-8 h-8 text-neutral-800 dark:text-white transform logo" />
       </div>
       <h1 class="text-3xl font-extrabold text-emerald-400">ticriticam</h1>
     </router-link>
