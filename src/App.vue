@@ -8,9 +8,9 @@
 </template>
 
 <script setup lang="ts">
-import AppHeader from "./components/AppHeader.vue";
 import { computed } from "vue";
-import useAppStore from "./store/AppStore.ts";
+import useAppStore from "@store/AppStore.ts";
+import AppHeader from "@components/AppHeader.vue";
 
 const AppStore = useAppStore();
 const darkMode = computed(() => AppStore.darkMode);

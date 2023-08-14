@@ -11,5 +11,5 @@
 </template>
 
 <script setup lang="ts">
-import AppMenu from "./AppMenu.vue";
+import AppMenu from "@components/AppMenu.vue";
 </script>

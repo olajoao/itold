@@ -1,31 +1,53 @@
 <template>
-  <section class="p-10">
-    <router-link to="/" class="flex items-center mb-5 gap-x-5">
+  <section class="py-10 container mx-auto">
+    <router-link
+      to="/"
+      class="flex items-center mb-5 gap-x-5 dark:text-gray-200"
+    >
       <MoveLeft class="w-5 h-5" />
-      <span>Back</span>
+      <span class="">Back</span>
     </router-link>
     <div class="flex">
-      <div class="w-[600px]">
-        <img src="https://picsum.photos/600" alt="" />
+      <div>
+        <img
+          class="object-contain h-full"
+          :src="`${imageBaseURL}${movie?.poster_path}`"
+          :alt="movie?.overview"
+          loading="lazy"
+          width="400"
+          height="600"
+        />
       </div>
       <div class="px-8 flex-1">
-        <h1 class="text-3xl text-neutral-800">Lorem ipsum</h1>
-        <p class="text-neutral-700 my-5">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam,
-          labore! Ex consequatur perferendis animi, quos quia quae non molestiae
-          iusto unde enim id dolorum qui inventore optio temporibus quam,
-          aspernatur aperiam eaque dignissimos a sit necessitatibus fugiat?
-          Mollitia animi magnam illo neque hic, amet asperiores molestiae error
-          atque incidunt distinctio enim sint vel ipsam. Fugiat dolorum cum
-          consequatur quod laboriosam totam harum, eos tenetur! Voluptas
-          consequuntur quos unde eum voluptatem error sapiente sed quibusdam.
-          Quos dolorem cumque facere perferendis eius.
+        <h1 class="text-3xl text-neutral-800 dark:text-gray-100">
+          {{ movie?.original_title }}
+        </h1>
+        <p class="text-neutral-700 dark:text-gray-200 my-5">
+          {{ movie?.overview }}
         </p>
       </div>
     </div>
+
+    <MovieReview />
   </section>
 </template>
 
 <script setup lang="ts">
+import { onMounted, computed } from "vue";
+import { useRoute } from "vue-router";
 import { MoveLeft } from "lucide-vue-next";
+import { MovieStore } from "@store/MovieStore.ts";
+import MovieReview from "./MoviewReview.vue";
+
+const useMovieStore = MovieStore();
+
+const route = useRoute();
+
+const movie = computed(() => useMovieStore.movie);
+
+const imageBaseURL = "https://image.tmdb.org/t/p/w500/";
+
+onMounted(async () => {
+  await useMovieStore.getMovie(String(route.params.id));
+});
 </script>

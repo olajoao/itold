@@ -13,21 +13,12 @@
           iure maiores totam minima maxime cupiditate ea error fugiat, beatae
           ducimus?
         </p>
-        <div class="grid grid-cols-4 gap-5 mt-10">
-          <HeroCard />
-          <HeroCard />
-          <HeroCard />
-          <HeroCard />
-          <HeroCard />
-          <HeroCard />
-          <HeroCard />
-          <HeroCard />
-        </div>
+        <PopularMovieList />
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import HeroCard from "../components/home/HeroCard.vue";
+import PopularMovieList from "./movies/PopularMovieList.vue";
 </script>

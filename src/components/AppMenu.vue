@@ -38,7 +38,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import useAppStore from "../store/AppStore.ts";
+import useAppStore from "@store/AppStore.ts";
 import { Sun, Moon, Menu } from "lucide-vue-next";
 
 const AppStore = useAppStore();
