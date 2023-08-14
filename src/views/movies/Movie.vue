@@ -11,7 +11,7 @@
       <div>
         <img
           class="object-contain h-full"
-          :src="`${imageBaseURL}${movie?.poster_path}`"
+          :src="movieImg"
           :alt="movie?.overview"
           loading="lazy"
           width="400"
@@ -33,21 +33,25 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, computed } from "vue";
+import { onMounted, computed, ref } from "vue";
 import { useRoute } from "vue-router";
 import { MoveLeft } from "lucide-vue-next";
 import { MovieStore } from "@store/MovieStore.ts";
 import MovieReview from "./MoviewReview.vue";
 
 const useMovieStore = MovieStore();
-
 const route = useRoute();
 
-const movie = computed(() => useMovieStore.movie);
+const imageBaseURL = "https://image.tmdb.org/t/p/w500";
 
-const imageBaseURL = "https://image.tmdb.org/t/p/w500/";
+const movie = computed(() => useMovieStore.movie);
+const movieImg = ref("");
+
+const getImage = () =>
+  (movieImg.value = `${imageBaseURL}${movie.value.poster_path}`);
 
 onMounted(async () => {
   await useMovieStore.getMovie(String(route.params.id));
+  getImage();
 });
 </script>
