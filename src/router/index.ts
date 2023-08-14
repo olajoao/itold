@@ -12,6 +12,11 @@ const routes = [
     name: "movie",
     component: () => import("@views/movies/Movie.vue"),
   },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "ErrorPage",
+    component: () => import("@views/ErrorPage.vue"),
+  },
 ];
 
 const router = createRouter({

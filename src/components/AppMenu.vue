@@ -30,7 +30,7 @@
       <Sun v-if="darkMode" class="w-5 h-5 text-gray-700 dark:text-gray-100" />
       <Moon v-else class="w-5 h-5 text-gray-700 dark:text-gray-100" />
     </button>
-    <button class="text-gray-700 sm:hidden">
+    <button class="text-gray-700 dark:text-neutral-300 sm:hidden">
       <Menu />
     </button>
   </div>

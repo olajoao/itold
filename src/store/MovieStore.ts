@@ -1,6 +1,5 @@
 import { defineStore } from "pinia";
 import request from "../http";
-
 export interface MovieProps {
   id: number;
   title: string;
@@ -33,8 +32,14 @@ export const MovieStore = defineStore("useMovieStore", {
     },
 
     async getMovie(movieId: string) {
-      const { data: movie } = await request.get(`/movie/${movieId}`);
-      this.movie = movie;
+      try {
+        const { data: movie } = await request.get(`/movie/${movieId}`);
+        this.movie = movie;
+        return true;
+      } catch (error) {
+        console.error("No movie found", error);
+        return false;
+      }
     },
   },
 });
