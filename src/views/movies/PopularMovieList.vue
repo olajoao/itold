@@ -13,7 +13,5 @@ const useMovieStore = MovieStore();
 
 const popularMovies = computed(() => useMovieStore.popularMovies.slice(0, 8));
 
-onMounted(async () => {
-  await useMovieStore.getPopularMovies();
-});
+onMounted(async () => await useMovieStore.getPopularMovies());
 </script>

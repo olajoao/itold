@@ -7,7 +7,7 @@
       :src="`${imageBaseURL}${movie?.poster_path}`"
       :alt="movie?.overview"
     />
-    <div class="py-3 px-1">
+    <div class="py-3">
       <h2
         class="text-gray-700 dark:text-neutral-300 font-semibold truncate text-sm"
       >

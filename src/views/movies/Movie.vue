@@ -5,7 +5,7 @@
       class="flex items-center mb-5 gap-x-5 text-gray-600 dark:text-gray-200"
     >
       <MoveLeft class="w-5 h-5" />
-      <span class="">Back</span>
+      <span class="">Voltar</span>
     </router-link>
     <div class="flex flex-wrap">
       <div class="px-0 pb-2 sm:p-0">
