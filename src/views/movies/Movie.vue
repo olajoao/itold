@@ -29,6 +29,12 @@
     </div>
 
     <MovieReview />
+
+    <MovieReviewList
+      v-for="review in reviews"
+      :key="review.id"
+      :review="review"
+    />
   </section>
 </template>
 
@@ -37,9 +43,13 @@ import { onMounted, computed, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { MoveLeft } from "lucide-vue-next";
 import { MovieStore } from "@store/MovieStore.ts";
+import { ReviewStore, ReviewProps } from "@store/ReviewStore";
 import MovieReview from "./MoviewReview.vue";
+import MovieReviewList from "./MovieReviewList.vue";
 
 const useMovieStore = MovieStore();
+const useReviewStore = ReviewStore();
+
 const route = useRoute();
 const router = useRouter();
 
@@ -47,13 +57,15 @@ const imageBaseURL = "https://image.tmdb.org/t/p/w500";
 
 const movie = computed(() => useMovieStore.movie);
 const movieImg = ref("");
-
 const getImage = () =>
   (movieImg.value = `${imageBaseURL}${movie.value.poster_path}`);
+
+const reviews = computed<ReviewProps[]>(() => useReviewStore.reviews);
 
 onMounted(async () => {
   const movieId = route.params.id ?? null;
   const movieWasFound = await useMovieStore.getMovie(String(movieId));
+  await useReviewStore.getAllByMovieId("1");
 
   if (!movieWasFound) router.push({ name: "home" });
 

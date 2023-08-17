@@ -31,56 +31,17 @@
         Comentar
       </button>
     </form>
-    <article
-      class="py-10 border-b border-gray-200 dark:border-neutral-700 first:border-none last:border-none"
-    >
-      <h1
-        class="truncate text-gray-800 dark:text-neutral-200 text-sm sm:text-base mb-2 flex items-center gap-x-3"
-      >
-        <span>Gostei muito</span>
-        <span class="text-sm mt-0.5 text-gray-500 dark:text-neutral-400">
-          13/12/2022
-        </span>
-      </h1>
-      <p class="text-gray-700 dark:text-neutral-200 text-xs sm:text-sm">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem officiis
-        nihil quos alias, molestias labore ad est porro placeat facilis.
-      </p>
-    </article>
-    <article
-      class="py-10 border-b border-gray-200 dark:border-neutral-700 first:border-none last:border-none"
-    >
-      <h1
-        class="truncate text-gray-800 dark:text-neutral-200 text-sm sm:text-base mb-2 flex items-center gap-x-3"
-      >
-        <span>Não gostei, asmei</span>
-        <span class="text-sm mt-0.5 text-gray-500 dark:text-neutral-400">
-          13/12/2022
-        </span>
-      </h1>
-      <p class="text-gray-700 dark:text-neutral-200 text-xs sm:text-sm">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit commodi,
-        architecto, culpa nostrum dolores autem doloribus facilis illo aperiam
-        laboriosam quis. Nostrum ea obcaecati aut debitis eveniet vero
-        voluptates magni?
-      </p>
-    </article>
-    <article
-      class="py-10 border-b border-gray-200 dark:border-neutral-700 first:border-none last:border-none"
-    >
-      <h1
-        class="truncate text-gray-800 dark:text-neutral-200 text-sm sm:text-base mb-2 flex items-center gap-x-3"
-      >
-        <span>HORRÍVEL</span>
-        <span class="text-sm mt-0.5 text-gray-500 dark:text-neutral-400">
-          13/12/2022
-        </span>
-      </h1>
-      <p class="text-gray-700 dark:text-neutral-200 text-xs sm:text-sm">
-        Lorem ipsum dolor sit amet.
-      </p>
-    </article>
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ReviewProps } from "@store/ReviewStore";
+import type { PropType } from "vue";
+
+defineProps({
+  review: {
+    type: Object as PropType<ReviewProps>,
+    default: [],
+  },
+});
+</script>
