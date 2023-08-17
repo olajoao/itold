@@ -65,7 +65,7 @@ const reviews = computed<ReviewProps[]>(() => useReviewStore.reviews);
 onMounted(async () => {
   const movieId = route.params.id ?? null;
   const movieWasFound = await useMovieStore.getMovie(String(movieId));
-  await useReviewStore.getAllByMovieId("1");
+  await useReviewStore.getAllByMovieId(String(movieId));
 
   if (!movieWasFound) router.push({ name: "home" });
 
