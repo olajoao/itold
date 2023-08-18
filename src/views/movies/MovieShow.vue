@@ -1,22 +1,13 @@
 <template>
   <section class="px-6 sm:px-10 py-4 xl:py-10 container mx-auto">
-    <router-link
-      to="/"
-      class="flex items-center mb-5 gap-x-5 text-gray-600 dark:text-gray-200"
-    >
+    <router-link to="/" class="flex items-center mb-5 gap-x-5 text-gray-600 dark:text-gray-200">
       <MoveLeft class="w-5 h-5" />
       <span class="">Voltar</span>
     </router-link>
     <div class="flex flex-wrap">
       <div class="px-0 pb-2 sm:p-0">
-        <img
-          class="object-contain h-full"
-          :src="movieImg"
-          :alt="movie?.overview"
-          loading="lazy"
-          width="400"
-          height="600"
-        />
+        <img class="object-contain h-full" :src="movieImg" :alt="movie?.overview" loading="lazy" width="400"
+          height="600" />
       </div>
       <div class="md:px-8 flex-1 mt-4 md:mt-0">
         <h1 class="text-2xl sm:text-3xl text-neutral-800 dark:text-gray-100">
@@ -30,11 +21,7 @@
 
     <MovieReview />
 
-    <MovieReviewList
-      v-for="review in reviews"
-      :key="review.id"
-      :review="review"
-    />
+    <MovieReviewList v-for="review in reviews" :key="review.id" :review="review" />
   </section>
 </template>
 
@@ -44,7 +31,7 @@ import { useRoute, useRouter } from "vue-router";
 import { MoveLeft } from "lucide-vue-next";
 import { MovieStore } from "@store/MovieStore.ts";
 import { ReviewStore, ReviewProps } from "@store/ReviewStore";
-import MovieReview from "./MoviewReview.vue";
+import MovieReview from "./MoviewReviewForm.vue";
 import MovieReviewList from "./MovieReviewList.vue";
 
 const useMovieStore = MovieStore();

@@ -11,11 +11,9 @@ export interface ReviewProps {
 }
 
 export const ReviewStore = defineStore("useReviewStore", {
-  state: () => {
-    return {
-      reviews: [] as ReviewProps[],
-    };
-  },
+  state: () => ({
+    reviews: [] as ReviewProps[],
+  }),
   actions: {
     async getAllByMovieId(movieId: string) {
       try {

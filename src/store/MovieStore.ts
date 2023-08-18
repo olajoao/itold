@@ -11,12 +11,10 @@ export interface MovieProps {
 }
 
 export const MovieStore = defineStore("useMovieStore", {
-  state: () => {
-    return {
-      popularMovies: [] as MovieProps[],
-      movie: {} as MovieProps,
-    };
-  },
+  state: () => ({
+    popularMovies: [] as MovieProps[],
+    movie: {} as MovieProps,
+  }),
 
   actions: {
     async getPopularMovies() {

@@ -1,16 +1,9 @@
 <template>
   <router-link class="max-w-[200px]" :to="`/movie/${movie?.id}`">
-    <img
-      width="200"
-      height="250"
-      class="max-w-full h-auto"
-      :src="`${imageBaseURL}${movie?.poster_path}`"
-      :alt="movie?.overview"
-    />
+    <img width="200" height="250" class="max-w-full h-auto" :src="`${imageBaseURL}${movie?.poster_path}`"
+      :alt="movie?.overview" />
     <div class="py-3">
-      <h2
-        class="text-gray-700 dark:text-neutral-300 font-semibold truncate text-sm"
-      >
+      <h2 class="text-gray-700 dark:text-neutral-300 font-semibold truncate text-sm">
         {{ movie?.original_title }}
       </h2>
     </div>

@@ -3,11 +3,9 @@ import { defineStore } from "pinia";
 const darkModeStorage = localStorage.getItem("darkMode");
 
 const AppStore = defineStore("useAppStore", {
-  state: () => {
-    return {
-      darkMode: (darkModeStorage === "true" ? true : false) ?? false,
-    };
-  },
+  state: () => ({
+    darkMode: (darkModeStorage === "true" ? true : false) ?? false,
+  }),
 
   actions: {
     toggleDarkMode() {

@@ -10,7 +10,7 @@ const routes = [
   {
     path: "/movie/:id",
     name: "movie",
-    component: () => import("@views/movies/Movie.vue"),
+    component: () => import("@views/movies/MovieShow.vue"),
   },
   {
     path: "/:pathMatch(.*)*",

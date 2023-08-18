@@ -1,10 +1,6 @@
 <template>
-  <article
-    class="py-10 border-b border-gray-200 dark:border-neutral-700 first:border-none last:border-none"
-  >
-    <h1
-      class="truncate text-gray-800 dark:text-neutral-200 text-sm sm:text-base mb-2 flex items-center gap-x-3"
-    >
+  <article class="py-10 border-b border-gray-200 dark:border-neutral-700 first:border-none last:border-none">
+    <h1 class="truncate text-gray-800 dark:text-neutral-200 text-sm sm:text-base mb-2 flex items-center gap-x-3">
       <span>{{ review?.title }}</span>
       <span class="text-sm mt-0.5 text-gray-500 dark:text-neutral-400">
         {{ review?.createdAt }}
@@ -23,9 +19,10 @@ import type { PropType } from "vue";
 defineProps({
   review: {
     type: Object as PropType<ReviewProps>,
-    default: [],
+    default: new Object(),
   },
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>
